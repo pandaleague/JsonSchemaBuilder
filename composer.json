@@ -10,7 +10,7 @@
             "type": "vcs",
             "url": "https://github.com/pandaleague/jsonschemabuilder"
         }
-    ]
+    ],
     "require": {
         "illuminate/support": "^5.5"
     },
