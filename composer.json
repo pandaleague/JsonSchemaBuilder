@@ -1,0 +1,22 @@
+{
+    "name": "pandaleague/jsonschemabuilder",
+    "authors": [
+        {
+            "name": "IAmEd",
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/pandaleague/jsonschemabuilder"
+        }
+    ]
+    "require": {
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "PandaLeague\\JsonSchemaBuilder\\": "src/"
+        }
+    }
+}
