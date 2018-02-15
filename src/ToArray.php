@@ -22,6 +22,9 @@ trait ToArray
                     $data[$property->getName()] = $value;
                 }
             }
+            elseif ($property->getName() == 'links') {
+                $data[$property->getName()] = $value;
+            }
             elseif (is_array($value)) {
 
                 foreach ($value as $key => $v) {

@@ -14,6 +14,7 @@ trait BaseType
     protected $allOf;
     protected $oneOf;
     protected $not;
+    protected $links;
 
 
     public function id(string $id) : parent
@@ -105,6 +106,32 @@ trait BaseType
     public function not(Type $type) : parent
     {
         $this->not = $type;
+        return $this;
+    }
+
+    public function link(string $rel, string $href, string $title = '', string $method = 'GET') : parent
+    {
+        if (!in_array(
+            $rel,
+            ['self', 'create', 'edit', 'delete', 'replace', 'first', 'last', 'next', 'prev', 'collection', 'latest-version', 'search', 'up']
+        )) {
+            throw new \InvalidArgumentException('Invalid link relation type');
+        }
+
+        if (!in_array($method, ['GET', 'POST', 'DELETE', 'PUT', 'PATCH', 'HEAD', 'CONNECT', 'OPTIONS', 'TRACE'])) {
+            throw new \InvalidArgumentException('Invalid http method');
+        }
+
+        if (is_null($this->links)) {
+            $this->links = [];
+        }
+        $this->links[] = [
+            'rel'    => $rel,
+            'href'   => $href,
+            'title'  => $title,
+            'method' => $method
+        ];
+
         return $this;
     }
 }
