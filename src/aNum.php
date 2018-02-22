@@ -23,14 +23,14 @@ class aNum extends Type
         return $this;
     }
 
-    public function minimum(float $min, ?bool $exclusive) : aNum
+    public function minimum(float $min, bool $exclusive = null) : aNum
     {
         $this->minimum = $min;
         $this->exclusiveMinimum = $exclusive;
         return $this;
     }
 
-    public function maximum(float $max, ?bool $exclusive) : aNum
+    public function maximum(float $max, bool $exclusive = null) : aNum
     {
         $this->maximum = $max;
         $this->exclusiveMaximum = $exclusive;

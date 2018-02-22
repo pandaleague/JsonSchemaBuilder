@@ -39,7 +39,11 @@ trait ToArray
                 }
             }
             elseif (!is_null($value)) {
-                $data[$property->getName()] = $value;
+                if ($property->getName() == 'ref') {
+                    $data['$ref'] = $value;
+                } else {
+                    $data[$property->getName()] = $value;
+                }
             }
         }
 

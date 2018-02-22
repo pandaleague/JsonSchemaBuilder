@@ -15,6 +15,7 @@ trait BaseType
     protected $oneOf;
     protected $not;
     protected $links;
+    protected $ref;
 
 
     public function id(string $id) : parent
@@ -23,7 +24,7 @@ trait BaseType
         return $this;
     }
 
-    public function schema(string $schema) : parent
+    public function schema($schema) : parent
     {
         $this->schema = $schema;
         return $this;
@@ -70,7 +71,7 @@ trait BaseType
         return $this;
     }
 
-    public function anyOff(array $items) : parent
+    public function anyOf(array $items) : parent
     {
         foreach ($items as $a) {
             if (!$a instanceof Type) {
@@ -81,7 +82,7 @@ trait BaseType
         return $this;
     }
 
-    public function allOff(array $items) : parent
+    public function allOf(array $items) : parent
     {
         foreach ($items as $a) {
             if (!$a instanceof Type) {
@@ -132,6 +133,12 @@ trait BaseType
             'method' => $method
         ];
 
+        return $this;
+    }
+
+    public function ref(string $path) : parent
+    {
+        $this->ref = $path;
         return $this;
     }
 }
