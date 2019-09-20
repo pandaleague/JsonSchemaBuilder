@@ -7,6 +7,8 @@ trait BaseObjectType
     protected $properties = [];
     protected $additionalProperties;
     protected $required;
+    protected $readOnly;
+    protected $writeOnly;
     protected $minProperties;
     protected $maxProperties;
     protected $dependencies = [];
@@ -78,6 +80,20 @@ trait BaseObjectType
     public function patternProperty(string $pattern, Type $type): parent
     {
         $this->patternProperties[$pattern] = $type;
+        return $this;
+    }
+
+    public function writeOnly(bool $state): parent
+    {
+        $this->writeOnly = $state;
+
+        return $this;
+    }
+
+    public function readOnly(bool $state): parent
+    {
+        $this->readOnly = $state;
+
         return $this;
     }
 }
