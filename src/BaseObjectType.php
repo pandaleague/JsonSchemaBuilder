@@ -82,18 +82,4 @@ trait BaseObjectType
         $this->patternProperties[$pattern] = $type;
         return $this;
     }
-
-    public function writeOnly(bool $state): parent
-    {
-        $this->writeOnly = $state;
-
-        return $this;
-    }
-
-    public function readOnly(bool $state): parent
-    {
-        $this->readOnly = $state;
-
-        return $this;
-    }
 }
