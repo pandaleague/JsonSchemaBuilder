@@ -16,6 +16,8 @@ trait BaseType
     protected $not;
     protected $links;
     protected $ref;
+    protected $readOnly;
+    protected $writeOnly;
 
 
     public function id(string $id) : parent

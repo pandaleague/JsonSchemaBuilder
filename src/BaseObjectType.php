@@ -7,8 +7,6 @@ trait BaseObjectType
     protected $properties = [];
     protected $additionalProperties;
     protected $required;
-    protected $readOnly;
-    protected $writeOnly;
     protected $minProperties;
     protected $maxProperties;
     protected $dependencies = [];
