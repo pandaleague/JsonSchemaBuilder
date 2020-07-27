@@ -18,7 +18,7 @@ trait BaseType
     protected $ref;
     protected $readOnly;
     protected $writeOnly;
-
+    protected $nullable;
 
     public function id(string $id) : parent
     {
@@ -154,6 +154,13 @@ trait BaseType
     public function readOnly(bool $state): parent
     {
         $this->readOnly = $state;
+
+        return $this;
+    }
+
+    public function nullable(bool $state): parent
+    {
+        $this->nullable = $state;
 
         return $this;
     }
