@@ -36,4 +36,10 @@ class aStr extends Type
         $this->format = $format;
         return $this;
     }
+
+    public function default(string $default) : aStr
+    {
+        $this->default = $default;
+        return $this;
+    }
 }
