@@ -36,4 +36,10 @@ class aNum extends Type
         $this->exclusiveMaximum = $exclusive;
         return $this;
     }
+
+    public function default(float $default) : aNum
+    {
+        $this->default = $default;
+        return $this;
+    }
 }

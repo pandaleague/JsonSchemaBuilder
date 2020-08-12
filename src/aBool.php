@@ -10,4 +10,10 @@ class aBool extends Type
     {
         parent::__construct('boolean');
     }
+
+    public function default(bool $default) : aBool
+    {
+        $this->default = $default;
+        return $this;
+    }
 }
