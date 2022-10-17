@@ -11,6 +11,7 @@ trait BaseObjectType
     protected $maxProperties;
     protected $dependencies = [];
     protected $patternProperties = [];
+    protected $propertyNames;
 
 
     public function property(string $name, Type $type): parent
@@ -78,6 +79,12 @@ trait BaseObjectType
     public function patternProperty(string $pattern, Type $type): parent
     {
         $this->patternProperties[$pattern] = $type;
+        return $this;
+    }
+
+    public function propertyNames(Type $type): parent
+    {
+        $this->propertyNames = $type;
         return $this;
     }
 }
